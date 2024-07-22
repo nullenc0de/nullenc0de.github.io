@@ -4,83 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Checklist</title>
+    <title>Coastline Cyber's Security Checklist</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 20px;
-            background-color: #f2f2f2; /* Light Gray */
+            background-color: #f2f2f2;
+            color: #333;
         }
-
-        h1 {
-            color: #1f1b47; /* Dark Blue */
+        h1, h2 {
+            color: #1f1b47;
         }
-
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .checklist-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .section-header {
+            background-color: #1f1b47;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #fff; /* White */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
         }
-
         th, td {
-            border: 1px solid #ddd; /* Light Gray */
+            border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
         }
-
         th {
-            background-color: #1f1b47; /* Dark Blue */
-            color: #fff;
+            background-color: #f2f2f2;
+            font-weight: bold;
         }
-
         .implemented, .not-implemented {
             cursor: pointer;
             font-size: 18px;
             text-align: center;
         }
-
-        .implemented {
-            color: #4caf50; /* Green */
-        }
-
-        .not-implemented {
-            color: #d12229; /* Red */
-        }
-
-        .risk-level {
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-            color: #515153; /* Gray */
-        }
-
-        .user-score {
-            background-color: #fff; /* White */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .implemented { color: #4caf50; }
+        .not-implemented { color: #d12229; }
+        .risk-level, .user-score {
+            background-color: #fff;
             border-radius: 8px;
-            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-top: 20px;
         }
-
         .print-btn {
-            background-color: #1f1b47; /* Dark Blue */
+            background-color: #1f1b47;
             color: #fff;
-            padding: 10px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -91,258 +74,144 @@
 </head>
 
 <body>
+    <div class="container">
+        <h1>Coastline Cyber's Security Checklist</h1>
+        <p>Evaluate and improve your cybersecurity measures with this comprehensive checklist. Track implementation, receive a dynamic risk rating, and enhance your organization's overall security posture.</p>
 
-    <h1>Coastline Cyber's Security Checklist</h1>
-    <p class="description">Coastline's checklist is your go-to resource for evaluating and improving cybersecurity measures. Track the implementation of key security recommendations, receive a dynamic risk rating, and enhance your organization's overall security posture. Stay proactive in mitigating risks with this user-friendly checklist.</p>
+        <div id="checklist-container">
+            <!-- Checklist sections will be dynamically inserted here -->
+        </div>
 
-    <table>
-        <tr>
-            <th>Recommendation</th>
-            <th>Common Examples</th>
-            <th>Implemented (1 pt)</th>
-            <th>Not Implemented (0 pts)</th>
-        </tr>
-        <!-- Add your checklist items here -->
-            <td>1.1 Detection of Unsuccessful Login Attempts</td>
-            <td>Use of intrusion detection systems and log analysis tools</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>1.2 Changing Default Passwords</td>
-            <td>Regular password change policies and avoiding default passwords</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>1.3 Multi-Factor Authentication</td>
-            <td>Two-factor authentication for user accounts</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>1.4 Minimum Password Strength</td>
-            <td>Password policies requiring a combination of uppercase, lowercase, numbers, and special characters</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>1.5 Separating User/Privileged Accounts</td>
-            <td>Distinct accounts for regular users and privileged administrators</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>1.6 Unique Credentials</td>
-            <td>Ensuring each user has a unique set of credentials</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>1.7 Revoking Credentials for Departing Employees</td>
-            <td>Immediate revocation of access for employees leaving the organization</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>2.1 Hardware/Software Approval Process</td>
-            <td>Formal process for approving and vetting hardware and software</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>2.2 Disable Macros by Default</td>
-            <td>Disabling macros in documents to prevent malicious code execution</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>2.3 Asset Inventory</td>
-            <td>Comprehensive list of all organizational assets, including hardware and software</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>2.4 Prohibit Unauthorized Device Connections</td>
-            <td>Restricting unauthorized devices from connecting to the network</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>2.5 Document Device Configurations</td>
-            <td>Detailed documentation of configurations for all network devices</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>3.1 Log Collection</td>
-            <td>Automated collection of logs from various systems and devices</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>3.2 Secure Log Storage</td>
-            <td>Encrypted and secure storage of logs to prevent tampering</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>3.3 Encrypt Data in Transit</td>
-            <td>Use of encryption protocols for securing data during transit</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>3.4 Secure Sensitive Data</td>
-            <td>Robust measures to secure sensitive data, including encryption</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>4.1 Organizational Cybersecurity Leadership</td>
-            <td>Presence of a dedicated cybersecurity leadership role within the organization</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>4.2 OT Cybersecurity Leadership</td>
-            <td>Similar cybersecurity leadership for operational technology (OT)</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>4.3 Basic Cybersecurity Training</td>
-            <td>Regular cybersecurity training programs for employees</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>4.4 OT Cybersecurity Training</td>
-            <td>Specialized training for employees involved in operational technology</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>4.5 IT/OT Cybersecurity Relationship Building</td>
-            <td>Collaboration and communication between IT and OT teams for effective cybersecurity</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>5.1 Mitigating Known Vulnerabilities</td>
-            <td>Regular patching and updates to address known vulnerabilities</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>5.2 Vulnerability Disclosure/Reporting</td>
-            <td>Establishing a process for receiving and addressing vulnerability reports</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>5.3 Deploy Security.txt Files</td>
-            <td>Inclusion of security.txt files on web servers for reporting security issues</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>5.4 No Exploitable Internet Services</td>
-            <td>Regular audits to ensure no exploitable services are exposed to the internet</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>5.5 Limit OT Internet Connections</td>
-            <td>Restricting internet connections for operational technology systems</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>5.6 Third-Party Security Control Validation</td>
-            <td>Verification of security controls for third-party services and products</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>6.1 Vendor Cybersecurity Requirements</td>
-            <td>Establishing cybersecurity requirements for vendors and suppliers</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>6.2 Supply Chain Incident Reporting</td>
-            <td>Process for reporting and addressing incidents within the supply chain</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>6.3 Supply Chain Vulnerability Disclosure</td>
-            <td>Encouraging disclosure of vulnerabilities within the supply chain</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>7.1 Incident Reporting</td>
-            <td>Clear procedures for reporting security incidents promptly</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>7.2 Incident Response Plans</td>
-            <td>Well-defined incident response plans for addressing security incidents</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>7.3 System Backups</td>
-            <td>Regular backups of critical systems to facilitate recovery in case of incidents</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>7.4 Document Network Topology</td>
-            <td>Comprehensive documentation of the organization's network topology</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>8.1 Network Segmentation</td>
-            <td>Implementation of network segmentation to isolate critical assets</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>8.2 Detecting Relevant Threats/TTPs</td>
-            <td>Continuous monitoring for detecting relevant threats and tactics, techniques, and procedures (TTPs)</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-        <tr>
-            <td>8.3 Email Security</td>
-            <td>Robust measures to enhance email security and prevent phishing attacks</td>
-            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
-            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
-        </tr>
-    </table>
+        <div class="risk-level">
+            <h2>Risk Levels:</h2>
+            <ul>
+                <li>0-10 Implemented: <span style="color: #d12229;">High Risk</span></li>
+                <li>11-20 Implemented: <span style="color: #f89c1b;">Medium Risk</span></li>
+                <li>21-29 Implemented: <span style="color: #1f1b47;">Low Risk</span></li>
+                <li>30 Implemented: <span style="color: #4caf50;">Minimal Risk</span></li>
+            </ul>
+        </div>
 
-    <div class="risk-level">
-        Risk Levels:
-        <ul>
-            <li>0-10 Implemented: <span style="color: #d12229;">High Risk</span></li>
-            <li>11-20 Implemented: <span style="color: #f89c1b;">Medium Risk</span></li>
-            <li>21-29 Implemented: <span style="color: #1f1b47;">Low Risk</span></li>
-            <li>30 Implemented: <span style="color: #4caf50;">Minimal Risk</span></li>
-        </ul>
-    </div>
-
-    <div class="user-score">
-        <h2>Your Score: <span id="userScore">0</span></h2>
-        <p>Your Company's Risk Rating: <span id="riskRating" style="color: #d12229;">High Risk</span></p>
-        <button class="print-btn" onclick="printChecklist()">Print Checklist</button>
+        <div class="user-score">
+            <h2>Your Score: <span id="userScore">0</span></h2>
+            <p>Your Company's Risk Rating: <span id="riskRating" style="color: #d12229;">High Risk</span></p>
+            <button class="print-btn" onclick="printChecklist()">Print Checklist</button>
+        </div>
     </div>
 
     <script>
+        const checklistData = [
+            {
+                title: "1. Account and Access Management",
+                items: [
+                    { id: "1.1", name: "Detection of Unsuccessful Login Attempts", example: "Use of intrusion detection systems and log analysis tools" },
+                    { id: "1.2", name: "Changing Default Passwords", example: "Regular password change policies and avoiding default passwords" },
+                    { id: "1.3", name: "Multi-Factor Authentication", example: "Two-factor authentication for user accounts" },
+                    { id: "1.4", name: "Minimum Password Strength", example: "Password policies requiring a combination of uppercase, lowercase, numbers, and special characters" },
+                    { id: "1.5", name: "Separating User/Privileged Accounts", example: "Distinct accounts for regular users and privileged administrators" },
+                    { id: "1.6", name: "Unique Credentials", example: "Ensuring each user has a unique set of credentials" },
+                    { id: "1.7", name: "Revoking Credentials for Departing Employees", example: "Immediate revocation of access for employees leaving the organization" }
+                ]
+            },
+            {
+                title: "2. Hardware and Software Controls",
+                items: [
+                    { id: "2.1", name: "Hardware/Software Approval Process", example: "Formal process for approving and vetting hardware and software" },
+                    { id: "2.2", name: "Disable Macros by Default", example: "Disabling macros in documents to prevent malicious code execution" },
+                    { id: "2.3", name: "Asset Inventory", example: "Comprehensive list of all organizational assets, including hardware and software" },
+                    { id: "2.4", name: "Prohibit Unauthorized Device Connections", example: "Restricting unauthorized devices from connecting to the network" },
+                    { id: "2.5", name: "Document Device Configurations", example: "Detailed documentation of configurations for all network devices" }
+                ]
+            },
+            {
+                title: "3. Logging and Data Protection",
+                items: [
+                    { id: "3.1", name: "Log Collection", example: "Automated collection of logs from various systems and devices" },
+                    { id: "3.2", name: "Secure Log Storage", example: "Encrypted and secure storage of logs to prevent tampering" },
+                    { id: "3.3", name: "Encrypt Data in Transit", example: "Use of encryption protocols for securing data during transit" },
+                    { id: "3.4", name: "Secure Sensitive Data", example: "Robust measures to secure sensitive data, including encryption" }
+                ]
+            },
+            {
+                title: "4. Cybersecurity Leadership and Training",
+                items: [
+                    { id: "4.1", name: "Organizational Cybersecurity Leadership", example: "Presence of a dedicated cybersecurity leadership role within the organization" },
+                    { id: "4.2", name: "OT Cybersecurity Leadership", example: "Similar cybersecurity leadership for operational technology (OT)" },
+                    { id: "4.3", name: "Basic Cybersecurity Training", example: "Regular cybersecurity training programs for employees" },
+                    { id: "4.4", name: "OT Cybersecurity Training", example: "Specialized training for employees involved in operational technology" },
+                    { id: "4.5", name: "IT/OT Cybersecurity Relationship Building", example: "Collaboration and communication between IT and OT teams for effective cybersecurity" }
+                ]
+            },
+            {
+                title: "5. Vulnerability Management",
+                items: [
+                    { id: "5.1", name: "Mitigating Known Vulnerabilities", example: "Regular patching and updates to address known vulnerabilities" },
+                    { id: "5.2", name: "Vulnerability Disclosure/Reporting", example: "Establishing a process for receiving and addressing vulnerability reports" },
+                    { id: "5.3", name: "Deploy Security.txt Files", example: "Inclusion of security.txt files on web servers for reporting security issues" },
+                    { id: "5.4", name: "No Exploitable Internet Services", example: "Regular audits to ensure no exploitable services are exposed to the internet" },
+                    { id: "5.5", name: "Limit OT Internet Connections", example: "Restricting internet connections for operational technology systems" },
+                    { id: "5.6", name: "Third-Party Security Control Validation", example: "Verification of security controls for third-party services and products" }
+                ]
+            },
+            {
+                title: "6. Supply Chain Security",
+                items: [
+                    { id: "6.1", name: "Vendor Cybersecurity Requirements", example: "Establishing cybersecurity requirements for vendors and suppliers" },
+                    { id: "6.2", name: "Supply Chain Incident Reporting", example: "Process for reporting and addressing incidents within the supply chain" },
+                    { id: "6.3", name: "Supply Chain Vulnerability Disclosure", example: "Encouraging disclosure of vulnerabilities within the supply chain" }
+                ]
+            },
+            {
+                title: "7. Incident Response and Recovery",
+                items: [
+                    { id: "7.1", name: "Incident Reporting", example: "Clear procedures for reporting security incidents promptly" },
+                    { id: "7.2", name: "Incident Response Plans", example: "Well-defined incident response plans for addressing security incidents" },
+                    { id: "7.3", name: "System Backups", example: "Regular backups of critical systems to facilitate recovery in case of incidents" },
+                    { id: "7.4", name: "Document Network Topology", example: "Comprehensive documentation of the organization's network topology" }
+                ]
+            },
+            {
+                title: "8. Advanced Security Measures",
+                items: [
+                    { id: "8.1", name: "Network Segmentation", example: "Implementation of network segmentation to isolate critical assets" },
+                    { id: "8.2", name: "Detecting Relevant Threats/TTPs", example: "Continuous monitoring for detecting relevant threats and tactics, techniques, and procedures (TTPs)" },
+                    { id: "8.3", name: "Email Security", example: "Robust measures to enhance email security and prevent phishing attacks" }
+                ]
+            }
+        ];
+
+        function createChecklistSection(section) {
+            const sectionElement = document.createElement('div');
+            sectionElement.className = 'checklist-section';
+            sectionElement.innerHTML = `
+                <div class="section-header">${section.title}</div>
+                <table>
+                    <tr>
+                        <th>Recommendation</th>
+                        <th>Common Examples</th>
+                        <th>Implemented (1 pt)</th>
+                        <th>Not Implemented (0 pts)</th>
+                    </tr>
+                    ${section.items.map(item => `
+                        <tr>
+                            <td>${item.id} ${item.name}</td>
+                            <td>${item.example}</td>
+                            <td class="implemented" onclick="toggleCheckbox(this)">[ ]</td>
+                            <td class="not-implemented" onclick="toggleCheckbox(this)">[ ]</td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+            return sectionElement;
+        }
+
+        function initializeChecklist() {
+            const container = document.getElementById('checklist-container');
+            checklistData.forEach(section => {
+                container.appendChild(createChecklistSection(section));
+            });
+        }
+
         function toggleCheckbox(cell) {
             const checkbox = cell.textContent.trim() === '[ ]' ? '[x]' : '[ ]';
             cell.textContent = checkbox;
@@ -363,13 +232,13 @@
             const riskLevel = document.querySelector('.risk-level');
 
             if (implementedCount <= 10) {
-                riskLevel.innerHTML = 'Risk Levels: <ul><li>0-10 Implemented: <span style="color: #d12229;">High Risk</span></li><li>11-20 Implemented: <span style="color: #f89c1b;">Medium Risk</span></li><li>21-29 Implemented: <span style="color: #1f1b47;">Low Risk</span></li><li>30 Implemented: <span style="color: #4caf50;">Minimal Risk</span></li></ul>';
+                riskLevel.querySelector('span').style.color = '#d12229';
             } else if (implementedCount <= 20) {
-                riskLevel.innerHTML = 'Risk Levels: <ul><li>0-10 Implemented: <span style="color: #d12229;">High Risk</span></li><li>11-20 Implemented: <span style="color: #f89c1b;">Medium Risk</span></li><li>21-29 Implemented: <span style="color: #1f1b47;">Low Risk</span></li><li>30 Implemented: <span style="color: #4caf50;">Minimal Risk</span></li></ul>';
+                riskLevel.querySelector('span').style.color = '#f89c1b';
             } else if (implementedCount <= 29) {
-                riskLevel.innerHTML = 'Risk Levels: <ul><li>0-10 Implemented: <span style="color: #d12229;">High Risk</span></li><li>11-20 Implemented: <span style="color: #f89c1b;">Medium Risk</span></li><li>21-29 Implemented: <span style="color: #1f1b47;">Low Risk</span></li><li>30 Implemented: <span style="color: #4caf50;">Minimal Risk</span></li></ul>';
+                riskLevel.querySelector('span').style.color = '#1f1b47';
             } else {
-                riskLevel.innerHTML = 'Risk Levels: <ul><li>0-10 Implemented: <span style="color: #d12229;">High Risk</span></li><li>11-20 Implemented: <span style="color: #f89c1b;">Medium Risk</span></li><li>21-29 Implemented: <span style="color: #1f1b47;">Low Risk</span></li><li>30 Implemented: <span style="color: #4caf50;">Minimal Risk</span></li></ul>';
+                riskLevel.querySelector('span').style.color = '#4caf50';
             }
         }
 
@@ -393,24 +262,25 @@
 
             if (score <= 10) {
                 riskRatingElement.textContent = 'High Risk';
-                riskRatingElement.style.color = '#d12229'; /* Red */
+                riskRatingElement.style.color = '#d12229';
             } else if (score <= 20) {
                 riskRatingElement.textContent = 'Medium Risk';
-                riskRatingElement.style.color = '#f89c1b'; /* Orange */
+                riskRatingElement.style.color = '#f89c1b';
             } else if (score <= 29) {
                 riskRatingElement.textContent = 'Low Risk';
-                riskRatingElement.style.color = '#1f1b47'; /* Dark Blue */
+                riskRatingElement.style.color = '#1f1b47';
             } else {
                 riskRatingElement.textContent = 'Minimal Risk';
-                riskRatingElement.style.color = '#4caf50'; /* Green */
+                riskRatingElement.style.color = '#4caf50';
             }
         }
 
         function printChecklist() {
             window.print();
         }
+
+        // Initialize the checklist when the page loads
+        window.onload = initializeChecklist;
     </script>
-
 </body>
-
 </html>
